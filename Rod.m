@@ -4,13 +4,13 @@ function rod = Rod(adjacency, origin, destination)
   
   if size(Paths{1},2) > 0
     nPaths = size(Paths, 2);
-    multPNotEkMin1 = 1;
+    Min = 1;
     for k = 1:nPaths
       m = size(Paths{k}, 2) - 1;
       pEk = (1 - (1 / m)) ** m;
-      pDk = multPNotEkMin1 * pEk;
+      pDk = Min * pEk;
       rod += pDk;
-      multPNotEkMin1 *= (1 - pEk);
+      Min *= (1 - pEk);
     endfor
   endif
     
